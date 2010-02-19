@@ -8,10 +8,8 @@ public class Test {
 		Plotdata pdata = new Plotdata();
 		XMLParse xmlp = new XMLParse("coords.xml");
 		pdata = xmlp.parse(2);
-		//Coord3d[] cds;
 		Coord2d[] cd2s;
-		//cds = pdata.coords;
-		cd2s = pdata.coord2d;
+		cd2s = pdata.getCoord2d();
 		int d = cd2s.length;
 		for(int i=0;i<d;i++) {
 			System.out.println("coords" + "[" + i + "] = " + cd2s[i].toString());
