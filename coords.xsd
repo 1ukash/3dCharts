@@ -1,0 +1,31 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="plotdata" type="PlotDataType"/>
+
+<xs:complexType name="PlotDataType">
+ <xs:sequence>
+  <xs:element name="data" type="DataType" minOccurs="1" maxOccurs="unbounded"/>
+ </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="DataType">
+ <xs:sequence>
+  <xs:element name="values" type="ValuesType" minOccurs="1" maxOccurs="3"/>
+ </xs:sequence>
+ <xs:attribute name="id" type="xs:int"/>
+</xs:complexType>
+
+<xs:complexType name="ValuesType">
+ <xs:sequence>
+  <xs:element name="value" type="xs:decimal" minOccurs="1" maxOccurs="unbounded"/>
+ </xs:sequence>
+ <xs:attributeGroup ref="ValuesAttrs"/>
+</xs:complexType>
+
+<xs:attributeGroup name="ValuesAttrs">
+ <xs:attribute name="axis" type="xs:string"/>
+ <xs:attribute name="name" type="xs:string"/>
+ <xs:attribute name="type" type="xs:string"/> 
+</xs:attributeGroup>
+
+</xs:schema>

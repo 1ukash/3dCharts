@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<plotdata
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="coords.xsd">
+
+	<data id='1'>
+		<values axis='x' name='XCOORDS' type='int'>
+			<value>1</value>
+			<value>4</value>
+			<value>1</value>
+			<value>3</value>
+			<value>10</value>
+			<value>5</value>
+		</values>
+
+		<values axis='y' name='YCOORDS' type='double'>
+			<value>2.0</value>
+			<value>1.0</value>
+			<value>19.2</value>
+			<value>45.1</value>
+			<value>1.28</value>
+			<value>5.55</value>
+		</values>
+
+		<values axis='z' name='ZCOORDS' type='double'>
+			<value>5.0</value>
+			<value>4.0</value>
+			<value>13.2</value>
+			<value>15.1</value>
+			<value>1.28</value>
+			<value>5.0</value>
+		</values>
+	</data>
+
+	<data id='2'>
+		<values axis='x' name='XCOORDS' type='int'>
+			<value>18838</value>
+			<value>24181</value>
+		</values>
+
+		<values axis='y' name='YCOORDS' type='double'>
+			<value>2.0</value>
+			<value>1.0</value>
+		</values>
+
+		<values axis='z' name='ZCOORDS' type='double'>
+			<value>2.0</value>
+			<value>1.0</value>
+		</values>
+	</data>
+
+
+</plotdata>
