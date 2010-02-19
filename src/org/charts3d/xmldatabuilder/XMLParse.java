@@ -88,4 +88,34 @@ public class XMLParse {
 		return cg;
 	}
 	
+	public int numOfPoints(int num) {
+		Element root_elem = (Element) document.getDocumentElement();
+		NodeList child_lst = root_elem.getChildNodes();
+		int cg=0;
+		int cf=0;
+		for (int i = 0; i < child_lst.getLength(); i++) {
+			if (child_lst.item(i).getNodeType() == Node.ELEMENT_NODE
+					&& child_lst.item(i).getNodeName() == "data") {
+				cg++;
+				if (cg!=num) continue;
+				NodeList child_lst_1 = child_lst.item(i).getChildNodes();
+				for (int j = 0; j < child_lst_1.getLength(); j++) {
+					if (child_lst_1.item(j).getNodeType() == Node.ELEMENT_NODE
+							&& child_lst_1.item(j).getNodeName() == "values") {
+						NodeList child_lst_2 = child_lst_1.item(j)
+								.getChildNodes();
+							cf=0;
+							for (int k = 0; k < child_lst_2.getLength(); k++) {
+								if (child_lst_2.item(k).getNodeType() == Node.ELEMENT_NODE
+										&& child_lst_2.item(k).getNodeName() == "value") {
+									cf++;
+								}
+							}
+						}
+					}
+				}
+			}
+		return cf;
+	}
+	
 }
