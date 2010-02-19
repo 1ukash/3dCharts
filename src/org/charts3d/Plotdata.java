@@ -17,17 +17,14 @@ public class Plotdata{
 	
 	public void addX(String a) {
 		alx.add(a);
-		//System.out.println("alx = " + alx);
 	}
 	
 	public void addY(String a) {
 		aly.add(a);
-		//System.out.println("aly = " + aly);
 	}
 
 	public void addZ(String a) {
 		alz.add(a);
-		//System.out.println("alz = " + alz);
 	}
 
 	public void alToCd(int flag) {

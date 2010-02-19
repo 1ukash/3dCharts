@@ -74,7 +74,6 @@ public class XMLParse {
 						}
 
 					}
-				
 				cdata.alToCd(cf);
 				}
 
