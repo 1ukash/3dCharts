@@ -64,9 +64,7 @@ public class XMLParse {
 								if (child_lst_2.item(k).getNodeType() == Node.ELEMENT_NODE
 										&& child_lst_2.item(k).getNodeName() == "value") {
 									cf++;
-									if(cv==1) cdata.addX(child_lst_2.item(k).getTextContent());
-									if(cv==2) cdata.addY(child_lst_2.item(k).getTextContent());
-									if(cv==3) cdata.addZ(child_lst_2.item(k).getTextContent());
+									cdata.addToAr(child_lst_2.item(k).getTextContent(),cv);
 								}
 							}
 						}

@@ -15,16 +15,10 @@ public class Plotdata{
 	HashMap<String,String> hm = new HashMap<String,String>();
 	
 	
-	public void addX(String a) {
-		alx.add(a);
-	}
-	
-	public void addY(String a) {
-		aly.add(a);
-	}
-
-	public void addZ(String a) {
-		alz.add(a);
+	public void addToAr(String a, int cv) {
+		if(cv==1) alx.add(a);
+		else if (cv==2) aly.add(a);
+		else if (cv==3) alz.add(a);
 	}
 
 	public void alToCd(int flag) {
