@@ -1,6 +1,5 @@
 package org.charts3d;
 import org.charts3d.xmldatabuilder.XMLParse;
-
 import net.masagroup.jzy3d.maths.Coord2d;
 //import net.masagroup.jzy3d.maths.Coord3d;
 

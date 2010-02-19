@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<plotdata
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:noNamespaceSchemaLocation="coords.xsd">
+<plotdata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="coords.xsd">
 
 	<data id='1'>
 		<values axis='x' name='XCOORDS' type='int'>

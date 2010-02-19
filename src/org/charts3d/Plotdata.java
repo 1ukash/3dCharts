@@ -53,8 +53,9 @@ public class Plotdata{
 	}
 	
 	/*
-	 * Добалены get-ы и переименовано coords  в  coord3d
+	 * Dobavleny metody get dlya coord3d i coord2d
 	 */
+	
 	public Coord3d[] getCoord3d(){
 		return coord3d;
 	}
