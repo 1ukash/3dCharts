@@ -7,8 +7,8 @@ import net.masagroup.jzy3d.maths.Coord3d;
 
 public class Plotdata{
 	
-	Coord3d[] coords;
-	Coord2d[] coord2d;
+	private Coord3d[] coord3d;
+	private Coord2d[] coord2d;
 	ArrayList<String> alx = new ArrayList<String>();
 	ArrayList<String> aly = new ArrayList<String>();
 	ArrayList<String> alz = new ArrayList<String>();
@@ -37,24 +37,32 @@ public class Plotdata{
 				float fx = Float.valueOf((alx.get(i)).trim());
 				float fy = Float.valueOf((aly.get(i)).trim());
 				coord2d[i] = new Coord2d(fx,fy);
-				System.out.println("coords" + "[" + i + "] = " + coord2d[i].toString());
 			}
 			
 			}
 		else {
-			coords = new Coord3d[alx.size()];
+			coord3d = new Coord3d[alx.size()];
 			for(int i=0;i<alx.size();i++) {
 				float fx = Float.valueOf((alx.get(i)).trim());
 				float fy = Float.valueOf((aly.get(i)).trim());
 				float fz = Float.valueOf((alz.get(i)).trim());
-				coords[i] = new Coord3d(fx,fy,fz);
-				System.out.println("coords" + "[" + i + "] = " + coords[i].toString());
+				coord3d[i] = new Coord3d(fx,fy,fz);
 			}
 		}
 	}
 	
 	public void attrToMap(String axis,String name) {
 		hm.put(axis, name);
+	}
+	
+	/*
+	 * Добалены get-ы и переименовано coords  в  coord3d
+	 */
+	public Coord3d[] getCoord3d(){
+		return coord3d;
+	}
+	public Coord2d[] getCoord2d(){
+		return coord2d;
 	}
 
 }
