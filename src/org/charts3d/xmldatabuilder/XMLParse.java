@@ -1,4 +1,5 @@
 package org.charts3d.xmldatabuilder;
+
 import java.io.File;
 import java.io.IOException;
 
@@ -16,16 +17,16 @@ import org.xml.sax.SAXException;
 public class XMLParse {
 	File xmlfile;
 	Plotdata cdata = new Plotdata();
+	DocumentBuilderFactory factory;
+	Document document;
+	DocumentBuilder db;
 
 	public XMLParse(String f) {
 		xmlfile = new File(f);
-	}
-
-	public Plotdata parse(int num) {
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		Document document = null;
+		factory = DocumentBuilderFactory.newInstance();
+		document = null;
 		try {
-			DocumentBuilder db = factory.newDocumentBuilder();
+			db = factory.newDocumentBuilder();
 			document = db.parse(xmlfile);
 		} catch (ParserConfigurationException e) {
 			e.printStackTrace();
@@ -34,15 +35,14 @@ public class XMLParse {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
 
+	public Plotdata parse(int num) {
 		Element root_elem = (Element) document.getDocumentElement();
-
 		NodeList child_lst = root_elem.getChildNodes();
-
 		int cg=0;
 		int cv=0;
 		int cf=0;
-
 		for (int i = 0; i < child_lst.getLength(); i++) {
 			if (child_lst.item(i).getNodeType() == Node.ELEMENT_NODE
 					&& child_lst.item(i).getNodeName() == "data") {
@@ -68,12 +68,24 @@ public class XMLParse {
 								}
 							}
 						}
-
 					}
 				cdata.alToCd(cf);
 				}
-
 			}
 	return cdata;
 	}
+
+	public int numOfGraphs() {
+		Element root_elem = (Element) document.getDocumentElement();
+		NodeList child_lst = root_elem.getChildNodes();
+		int cg=0;
+		for (int i = 0; i < child_lst.getLength(); i++) {
+			if (child_lst.item(i).getNodeType() == Node.ELEMENT_NODE
+					&& child_lst.item(i).getNodeName() == "data") {
+				cg++;
+			}
+		}
+		return cg;
+	}
+	
 }
