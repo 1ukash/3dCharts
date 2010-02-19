@@ -36,7 +36,6 @@ public class XMLParse {
 		}
 
 		Element root_elem = (Element) document.getDocumentElement();
-		System.out.println(root_elem.getNodeName());
 
 		NodeList child_lst = root_elem.getChildNodes();
 
@@ -65,7 +64,6 @@ public class XMLParse {
 								if (child_lst_2.item(k).getNodeType() == Node.ELEMENT_NODE
 										&& child_lst_2.item(k).getNodeName() == "value") {
 									cf++;
-									System.out.println("" + child_lst_2.item(k).getTextContent());
 									if(cv==1) cdata.addX(child_lst_2.item(k).getTextContent());
 									if(cv==2) cdata.addY(child_lst_2.item(k).getTextContent());
 									if(cv==3) cdata.addZ(child_lst_2.item(k).getTextContent());
