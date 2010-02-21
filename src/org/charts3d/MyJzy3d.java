@@ -1,24 +1,16 @@
 package org.charts3d;
 
 import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.FlowLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JApplet;
 import javax.swing.JButton;
 import javax.swing.JComponent;
-import javax.swing.JPanel;
-
 
 import net.masagroup.jzy3d.chart.Chart;
-import net.masagroup.jzy3d.chart.ChartScene;
 import net.masagroup.jzy3d.colors.Color;
 import net.masagroup.jzy3d.maths.Coord3d;
-import net.masagroup.jzy3d.plot3d.primitives.Scatter;
-import net.masagroup.jzy3d.plot3d.primitives.selectables.SelectableScatter;
-import net.masagroup.jzy3d.plot3d.rendering.Graph;
 import net.masagroup.jzy3d.plot3d.rendering.canvas.ICanvas;
 
 
@@ -27,6 +19,8 @@ public class MyJzy3d extends JApplet{
 	 * 
 	 */
 	private static final long serialVersionUID = -3961560252163844174L;
+	
+	//TODO make all fields private!
 	PointsXYZ points=null;
 	MySelectableScatter sc=null;
 	MySelectableScatter unHidenSc=null;
@@ -52,6 +46,7 @@ public class MyJzy3d extends JApplet{
 //		jp.add(comp);
 		add((JComponent)comp, BorderLayout.CENTER,0);
 		add(button, BorderLayout.SOUTH,1);
+		//TODO: use MouseAdapter!
 		button.addMouseListener(new MouseListener() {
 			
 			@Override
@@ -79,7 +74,7 @@ public class MyJzy3d extends JApplet{
 				if(!hide){
 					b=sc.getHighlighted();
 					int kol=0;
-					//считаем сколько точек оставить
+					//пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 					Coord3d coordbuf[]=sc.getData();
 					for(int i=0;i<b.length;i++){
 						if(b[i]){

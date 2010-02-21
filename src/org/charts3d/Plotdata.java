@@ -9,6 +9,7 @@ public class Plotdata{
 	
 	private Coord3d[] coord3d;
 	private Coord2d[] coord2d;
+	//TODO: why aren't fields private?
 	ArrayList<String> alx = new ArrayList<String>();
 	ArrayList<String> aly = new ArrayList<String>();
 	ArrayList<String> alz = new ArrayList<String>();
@@ -16,11 +17,13 @@ public class Plotdata{
 	
 	
 	public void addToAr(String a, int cv) {
+	    //TODO: ugly code: what is 1, 2 and 3? constants?
 		if(cv==1) alx.add(a);
 		else if (cv==2) aly.add(a);
 		else if (cv==3) alz.add(a);
 	}
 
+	//TODO: please change method name
 	public void alToCd(int flag) {
 		if(flag==2) {
 			coord2d = new Coord2d[alx.size()];

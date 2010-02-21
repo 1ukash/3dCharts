@@ -14,13 +14,16 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+//TODO class name is not very good in this case
 public class XMLParse {
+    //TODO: fields must be private!
 	File xmlfile;
 	Plotdata cdata = new Plotdata();
 	DocumentBuilderFactory factory;
 	Document document;
 	DocumentBuilder db;
 
+	//TODO: i suppose that f must be xml, not file name. What you will do if file in db?
 	public XMLParse(String f) {
 		xmlfile = new File(f);
 		factory = DocumentBuilderFactory.newInstance();
@@ -37,6 +40,7 @@ public class XMLParse {
 		}
 	}
 
+	//TODO very-very-very difficult!
 	public Plotdata parse(int num) {
 		Element root_elem = (Element) document.getDocumentElement();
 		NodeList child_lst = root_elem.getChildNodes();
@@ -87,7 +91,7 @@ public class XMLParse {
 		}
 		return cg;
 	}
-	
+	//TODO: really hard to understand! let's make it easier!
 	public int numOfPoints(int num) {
 		Element root_elem = (Element) document.getDocumentElement();
 		NodeList child_lst = root_elem.getChildNodes();
