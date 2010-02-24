@@ -28,9 +28,8 @@ public class Plotdata{
 				float fx = Float.valueOf((alx.get(i)).trim());
 				float fy = Float.valueOf((aly.get(i)).trim());
 				coord2d[i] = new Coord2d(fx,fy);
-			}
-			
-			}
+			}	
+		}
 		else {
 			coord3d = new Coord3d[alx.size()];
 			for(int i=0;i<alx.size();i++) {
@@ -45,10 +44,6 @@ public class Plotdata{
 	public void attrToMap(String axis,String name) {
 		hm.put(axis, name);
 	}
-	
-	/*
-	 * Dobavleny metody get dlya coord3d i coord2d
-	 */
 	
 	public Coord3d[] getCoord3d(){
 		return coord3d;

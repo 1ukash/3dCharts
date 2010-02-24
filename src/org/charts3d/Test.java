@@ -8,6 +8,7 @@ public class Test {
 		Plotdata pdata = new Plotdata();
 		XMLParse xmlp = new XMLParse("coords.xml");
 		int numof = xmlp.numOfGraphs();
+		int numofp = xmlp.numOfPoints(1);
 		pdata = xmlp.parse(1);
 		Coord3d[] cd3s = null;
 		cd3s = pdata.getCoord3d();
