@@ -1,6 +1,7 @@
 package org.charts3d.xmldatabuilder;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -15,7 +16,7 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 //TODO class name is not very good in this case
-public class XMLParse {
+public class XMLParser {
     //TODO: fields must be private!
 	File xmlfile;
 	Plotdata cdata = new Plotdata();
@@ -25,7 +26,7 @@ public class XMLParse {
 
 	//TODO: i suppose that f must be xml, not file name. What you will do if file in db?
 	public XMLParse(String f) {
-		xmlfile = new File(f);
+		is = new FileInputStream(f);
 		factory = DocumentBuilderFactory.newInstance();
 		document = null;
 		try {

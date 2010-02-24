@@ -10,9 +10,9 @@ public class Plotdata{
 	private Coord3d[] coord3d;
 	private Coord2d[] coord2d;
 	//TODO: why aren't fields private?
-	ArrayList<String> alx = new ArrayList<String>();
-	ArrayList<String> aly = new ArrayList<String>();
-	ArrayList<String> alz = new ArrayList<String>();
+	private ArrayList<String> alx = new ArrayList<String>();
+	private ArrayList<String> aly = new ArrayList<String>();
+	private ArrayList<String> alz = new ArrayList<String>();
 	HashMap<String,String> hm = new HashMap<String,String>();
 	
 	
