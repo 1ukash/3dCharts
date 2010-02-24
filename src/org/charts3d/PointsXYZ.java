@@ -21,6 +21,7 @@ public class PointsXYZ {
 		String bufy=null;
 		String bufz=null;
 		try {
+		    //TODO: i haven't such file in my system!
 			BufferedReader br=new BufferedReader(
 					new InputStreamReader(
 					new FileInputStream("D:\\workspace\\myjzy3d\\points.txt")));

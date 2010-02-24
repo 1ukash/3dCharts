@@ -15,7 +15,7 @@ import net.masagroup.jzy3d.plot3d.rendering.canvas.CanvasSwing;
 import net.masagroup.jzy3d.plot3d.rendering.canvas.ICanvas;
 import net.masagroup.jzy3d.plot3d.rendering.canvas.Quality;
 
-
+//It is a copy of org.charts3d.MyChart???
 public class MyChart {
 	MySelectableScatter coord=null;
 	CanvasAWT canvas=null;
