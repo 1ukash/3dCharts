@@ -1,18 +1,11 @@
 package org.charts3d.scatter;
 import java.awt.Graphics;
 
-
 import net.masagroup.jzy3d.chart.Chart;
 import net.masagroup.jzy3d.chart.controllers.ChartThreadController;
 import net.masagroup.jzy3d.chart.controllers.mouse.ChartMouseController;
-import net.masagroup.jzy3d.chart.controllers.mouse.ScatterMouseSelector;
-import net.masagroup.jzy3d.plot3d.primitives.Point;
-import net.masagroup.jzy3d.plot3d.primitives.selectables.SelectableScatter;
 import net.masagroup.jzy3d.plot3d.rendering.Renderer2d;
-import net.masagroup.jzy3d.plot3d.rendering.Scene;
 import net.masagroup.jzy3d.plot3d.rendering.canvas.CanvasAWT;
-import net.masagroup.jzy3d.plot3d.rendering.canvas.CanvasSwing;
-import net.masagroup.jzy3d.plot3d.rendering.canvas.ICanvas;
 import net.masagroup.jzy3d.plot3d.rendering.canvas.Quality;
 
 //It is a copy of org.charts3d.MyChart???
