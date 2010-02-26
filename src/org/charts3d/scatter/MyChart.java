@@ -23,7 +23,7 @@ public class MyChart {
 
   public MyChart(MySelectableScatter coord) {
     this.coord = coord;
-    this.coord.setWidth(5);
+    this.coord.setWidth(MyJzy3d.POINTSIZE);
   }
 
   public Chart getChart() {
