@@ -65,36 +65,4 @@ public class CoordsXMLParser {
 		arrayCoords[j].add(val);
 	}
 
-	/*
-	public void addCoordsToStorage(int i){
-		int coordsDim = arrayCoords[0].size();
-		Coord3d[] coord3d;
-		Coord2d[] coord2d;
-		
-		switch(arrayCoords.length) {
-			case 2:
-				coord2d = new Coord2d[coordsDim];
-				for(int k = 0; k < coordsDim; k++) {
-					float fx = Float.valueOf((arrayCoords[0].get(k)).toString());
-					float fy = Float.valueOf((arrayCoords[1].get(k)).toString());
-					coord2d[k] = new Coord2d(fx,fy);
-				}
-				((ArrayList<PlotStorage>)plotStorage).get(i).addCoords(coord2d);
-				break;
-			case 3:
-				coord3d = new Coord3d[coordsDim];
-				for(int k = 0; k < coordsDim; k++) {
-					float fx = Float.valueOf((arrayCoords[0].get(k)).toString());
-					float fy = Float.valueOf((arrayCoords[1].get(k)).toString());
-					float fz = Float.valueOf((arrayCoords[2].get(k)).toString());
-					coord3d[k] = new Coord3d(fx,fy,fz);
-				}
-				((ArrayList<PlotStorage>)plotStorage).get(i).addCoords(coord3d);
-				break;
-			default:
-				System.out.println("Wrong dimension");
-		}
-	}
-*/
-
 }
