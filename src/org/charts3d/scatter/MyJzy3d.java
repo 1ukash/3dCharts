@@ -1,22 +1,24 @@
 package org.charts3d.scatter;
 
-import javax.swing.JComponent;
 import java.awt.Label;
-import javax.swing.JPanel;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.swing.JApplet;
 import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
 
 import net.masagroup.jzy3d.chart.Chart;
 import net.masagroup.jzy3d.colors.Color;
 import net.masagroup.jzy3d.maths.Coord3d;
-import net.masagroup.jzy3d.plot3d.rendering.CameraMode;
-import net.masagroup.jzy3d.plot3d.rendering.canvas.ICanvas;
 
-import org.charts3d.Plotdata;
-import org.charts3d.xmldatabuilder.XMLParse;
+import org.charts3d.PlotStorage;
+import org.charts3d.xmldatabuilder.CoordsXMLParser;
 
 public class MyJzy3d extends JApplet {
   /**
@@ -24,19 +26,13 @@ public class MyJzy3d extends JApplet {
 	 */
   private static final long serialVersionUID = -3961560252163844174L;
 
-  private XMLParse XMLparser = new XMLParse("../coords.xml");
-  private Plotdata pdata = new Plotdata();
+  private CoordsXMLParser XMLparser = new CoordsXMLParser();
   private MySelectableScatter sc = null;
-  private MySelectableScatter unHidenSc = null;
   private Chart chart = null;
-  private Chart bufChart = null;
   private Coord3d coord[] = null;
-  private boolean[] b = null;
   private JButton button = null;
-  private JPanel chartPanel=null;
   private JPanel infoPanel = null;
   private JPanel pointsPanel = null;
-  //private ScatterKeyListener scatterKey=null;
 
   private boolean hide = false;
   
@@ -53,8 +49,15 @@ public class MyJzy3d extends JApplet {
   
 
   public void init() {
-    pdata = XMLparser.parse(1);
-    coord = pdata.getCoord3d();
+    try {
+      ArrayList<PlotStorage> coordsArray=(ArrayList<PlotStorage>)XMLparser.parse(
+          new FileInputStream("d:\\workspace\\3dCharts\\coords.xml"));
+      coord=coordsArray.get(0).getCoord3d();
+    } catch (FileNotFoundException e1) {
+      e1.printStackTrace();
+    } catch (IOException e1) {
+      e1.printStackTrace();
+    }
     Color color[] = new Color[coord.length];
     for (int i = 0; i < coord.length; i++)
       color[i] = new Color(0, 1, 0);
@@ -63,9 +66,7 @@ public class MyJzy3d extends JApplet {
     chart = m.getChart();
     setSize(MAINWINDOWWIDTH, MAINWINDOWHEIGHT);
     setLayout(null);
-    //scatterKey=new ScatterKeyListener(chart, sc);
     
-   // chart.getCanvas().addKeyListener(scatterKey);
     JComponent component=(JComponent)chart.getCanvas();
     component.setBounds(0, 0, CHARTWIDTH, CHARTHEIGHT);
     
@@ -83,7 +84,6 @@ public class MyJzy3d extends JApplet {
 
     
     pointsPanel = new JPanel();
-    //pointsPanel.setLayout(new BoxLayout(pointsPanel, BoxLayout.PAGE_AXIS));
     pointsPanel.setLayout(null);
     pointsPanel.setBounds(0, 28, INFOPANELWIDTH, 450);
 

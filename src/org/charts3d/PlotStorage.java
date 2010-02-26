@@ -27,4 +27,14 @@ public class PlotStorage {
 		coords3d = coords;
 	}
 	
+	/*
+	 * added this method
+	 */
+	public Coord3d[] getCoord3d(){
+	  return coords3d;
+	}
+	public Coord2d[] getCoord2d(){
+    return coords2d;
+  }
+	
 }
