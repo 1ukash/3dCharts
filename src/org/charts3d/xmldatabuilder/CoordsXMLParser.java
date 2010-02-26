@@ -11,9 +11,6 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
-import net.masagroup.jzy3d.maths.Coord2d;
-import net.masagroup.jzy3d.maths.Coord3d;
-
 import org.charts3d.PlotStorage;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
@@ -54,7 +51,8 @@ public class CoordsXMLParser {
 						addCoordsToArray(j,val);
 						}
 					}
-				addCoordsToStorage(i);
+				((ArrayList<PlotStorage>)plotStorage).get(i).addCooordsToStorage(arrayCoords);
+				//addCoordsToStorage(i);
 				}
 			}
 		catch (XPathExpressionException e) {
@@ -67,6 +65,7 @@ public class CoordsXMLParser {
 		arrayCoords[j].add(val);
 	}
 
+	/*
 	public void addCoordsToStorage(int i){
 		int coordsDim = arrayCoords[0].size();
 		Coord3d[] coord3d;
@@ -95,5 +94,7 @@ public class CoordsXMLParser {
 			default:
 				System.out.println("Wrong dimension");
 		}
-	}	
+	}
+*/
+
 }

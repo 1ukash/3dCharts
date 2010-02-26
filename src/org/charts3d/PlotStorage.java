@@ -1,23 +1,30 @@
 package org.charts3d;
 
-import java.awt.List;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import net.masagroup.jzy3d.maths.Coord2d;
-import net.masagroup.jzy3d.maths.Coord3d;
-
 public class PlotStorage {
 	private Map<String,String> axisNames = new HashMap<String,String>();
-	private Coord3d[] coords3d;
-	private Coord2d[] coords2d;
-	
+	private ArrayList<Double>[] arrayStorage = null;
+	/*	private Coord3d[] coords3d;
+	private Coord2d[] coords2d;*/
 
 	public void addAttributeToMap(String axis,String name) {
 		axisNames.put(axis, name);
 	}
 	
+
+	public void addCooordsToStorage(ArrayList<Double>[] arrayCoords) {
+		arrayStorage = new ArrayList[arrayCoords.length];
+		arrayStorage = arrayCoords;
+	}
 	
+	public ArrayList<Double>[] getCoords(){
+		  return arrayStorage;
+		}
+
+/*
 	public void addCoords(Coord2d[] coords) {
 		coords2d = coords;
 		
@@ -26,15 +33,13 @@ public class PlotStorage {
 	public void addCoords(Coord3d[] coords) {
 		coords3d = coords;
 	}
-	
-	/*
-	 * added this method
-	 */
+
 	public Coord3d[] getCoord3d(){
 	  return coords3d;
 	}
+	
 	public Coord2d[] getCoord2d(){
     return coords2d;
   }
-	
+*/
 }
