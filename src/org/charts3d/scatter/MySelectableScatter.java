@@ -40,8 +40,13 @@ public class MySelectableScatter extends SelectableScatter {
   }
 
   public void remoteAllocation() {
-    for (Integer i : oldAllocatedPoint)
+    for (int i=0;i<allocatedPoints.length;i++)
       allocatedPoints[i] = false;
+  }
+  
+  public void showAll(){
+    for (int i = 0; i < this.showPoints.length; i++)
+      this.showPoints[i] = true;
   }
 
   public void setShowPoints(boolean[] showPoints) {
