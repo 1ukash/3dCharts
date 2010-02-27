@@ -1,13 +1,10 @@
 package org.charts3d.scatter;
 
 import java.awt.Label;
-import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.StringBufferInputStream;
 import java.util.ArrayList;
 
 import javax.media.opengl.GL;
@@ -75,6 +72,11 @@ public class MyJzy3d extends JApplet {
     } else {
       String xmlCode = getParameter("xmlString");
       ByteArrayInputStream bais = new ByteArrayInputStream(xmlCode.getBytes());
+      try {
+        coordsArray = (ArrayList<PlotStorage>) XMLparser.parse(bais);
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
     }
   }
 
