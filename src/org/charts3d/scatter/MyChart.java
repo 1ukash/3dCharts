@@ -35,17 +35,12 @@ public class MyChart {
     mouseCamera = new ChartMouseController(chart);
     mouseCamera.addSlaveThreadController(threadCamera);
     mouseSelection = new MyScatterSelector(coord);
-    //mouseCameraSelect=new ChartMouseSelectController(chart, mouseSelection);
 
     messageRenderer = new Renderer2d() {
       public void paint(Graphics g) {
         g.setColor(java.awt.Color.RED);
       }
     };
-    
-    //chart.removeController(mouseCamera);
-    //mouseSelection.attachChart(chart);
-    
     
     chart.addRenderer(messageRenderer);
 
