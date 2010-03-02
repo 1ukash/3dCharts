@@ -216,7 +216,7 @@ public class MyJzy3d extends JApplet {
     
     //add(new JButton("Hello"));
     
-    addNewChart("<?xml version=\"1.0\" encoding=\"utf-8\"?>"+
+    /*addNewChart("<?xml version=\"1.0\" encoding=\"utf-8\"?>"+
 
         "<plotdata xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\""+
           " xsi:noNamespaceSchemaLocation=\"coords.xsd\">"+
