@@ -53,14 +53,14 @@ public class MyJzy3d extends JApplet {
   private final int BUTTONHEIGHT = 25;
   private final int INFOPANELWIDTH = 150;
   private final int INFOPANELHEIGHT = 300;
-  private final int MAINWINDOWWIDTH = 700;
-  private final int MAINWINDOWHEIGHT = 550;
+  private static final int MAINWINDOWWIDTH = 700;
+  private static final int MAINWINDOWHEIGHT = 550;
   private final int SLIDERWIDTH = 100;
   private final int SLIDERHEIGHT = 50;
 
   public static int POINTSIZE = 5;
 
-  public MyJzy3d() {
+  /*public MyJzy3d() {
     if (false) {
       try {
         coordsArray = (ArrayList<PlotStorage>) XMLparser.parse(new FileInputStream("d:\\workspace\\3dCharts\\coords.xml"));
@@ -78,15 +78,17 @@ public class MyJzy3d extends JApplet {
         e.printStackTrace();
       }
     }
-  }
+  }*/
 
   public void init() {
 
-    ArrayList<Double>[] dCoord = coordsArray.get(0).getCoords();
+   /* ArrayList<Double>[] dCoord = coordsArray.get(0).getCoords();
     int kol = dCoord[0].size();
     coord = new Coord3d[kol];
     for (int i = 0; i < kol; i++)
-      coord[i] = new Coord3d(dCoord[0].get(i), dCoord[1].get(i), dCoord[2].get(i));
+      coord[i] = new Coord3d(dCoord[0].get(i), dCoord[1].get(i), dCoord[2].get(i));*/
+    coord=new Coord3d[1];
+    coord[0]=new Coord3d(5.2,6,7);
     color = new Color[coord.length];
     for (int i = 0; i < coord.length; i++)
       color[i] = new Color(0, (float) 1, 0);
@@ -154,6 +156,8 @@ public class MyJzy3d extends JApplet {
     add(button, 1);
     add(infoPanel, 2);
     add(slider, 3);
+    
+    //add(new JButton("Hello"));
 
   }
 }
