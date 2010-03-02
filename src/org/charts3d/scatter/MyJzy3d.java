@@ -1,9 +1,8 @@
 package org.charts3d.scatter;
 
+import java.awt.Component;
 import java.awt.Label;
 import java.io.ByteArrayInputStream;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -36,7 +35,6 @@ public class MyJzy3d extends JApplet {
   private MySelectableScatter sc = null;
   private Chart chart = null;
   private Coord3d coord[] = null;
-  // private JButton button = null;
   private JPanel infoPanel = null;
   private JList pointsList = null;
   private Color color[] = null;
@@ -81,18 +79,62 @@ public class MyJzy3d extends JApplet {
   }*/
 
   public void init() {
+    
+    /*
+     * 
+     */
+    setSize(MAINWINDOWWIDTH, MAINWINDOWHEIGHT);
+    setLayout(null);
 
+   /* addNewChart("<?xml version=\"1.0\" encoding=\"utf-8\"?>"+
+
+"<plotdata xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\""+
+  " xsi:noNamespaceSchemaLocation=\"coords.xsd\">"+
+
+  "<data id='1'>"+
+    "<values axis='x' name='XCOORDS' type='int'>"+
+      "<value>1</value>"+
+      "<value>4</value>"+
+      "<value>1</value>"+
+      "<value>3</value>"+
+      "<value>10</value>"+
+      "<value>5</value>"+
+    "</values>"+
+
+    "<values axis='y' name='YCOORDS' type='double'>"+
+      "<value>2.0</value>"+
+      "<value>1.0</value>"+
+      "<value>19.2</value>"+
+      "<value>45.1</value>"+
+      "<value>1.28</value>"+
+      "<value>5.55</value>"+
+    "</values>"+
+
+    "<values axis='z' name='ZCOORDS' type='double'>"+
+      "<value>5.0</value>"+
+      "<value>4.0</value>"+
+      "<value>13.2</value>"+
+      "<value>15.1</value>"+
+      "<value>1.28</value>"+
+      "<value>5.0</value>"+
+    "</values>"+
+  "</data>"+
+
+"</plotdata>");*/
+    
    /* ArrayList<Double>[] dCoord = coordsArray.get(0).getCoords();
     int kol = dCoord[0].size();
     coord = new Coord3d[kol];
     for (int i = 0; i < kol; i++)
       coord[i] = new Coord3d(dCoord[0].get(i), dCoord[1].get(i), dCoord[2].get(i));*/
-    coord=new Coord3d[1];
+    
+    /*coord=new Coord3d[2];
     coord[0]=new Coord3d(5.2,6,7);
+    coord[1]=new Coord3d(10,1.6,5);
     color = new Color[coord.length];
     for (int i = 0; i < coord.length; i++)
-      color[i] = new Color(0, (float) 1, 0);
-    sc = new MySelectableScatter(coord, color) {
+      color[i] = new Color(0, (float) 1, 0);*/
+    /*sc = new MySelectableScatter(coord, color) {
       public void draw(GL gl, GLU glu, Camera cam) {
         gl.glEnable(GL.GL_POINT_SMOOTH); // should be in init
         super.draw(gl, glu, cam);
@@ -100,7 +142,12 @@ public class MyJzy3d extends JApplet {
     };
     MyChart m = new MyChart(sc);
     chart = m.getChart();
-    setSize(MAINWINDOWWIDTH, MAINWINDOWHEIGHT);
+    
+
+    /*
+     * 
+     */
+    /*setSize(MAINWINDOWWIDTH, MAINWINDOWHEIGHT);
     setLayout(null);
 
     JComponent component = (JComponent) chart.getCanvas();
@@ -152,12 +199,48 @@ public class MyJzy3d extends JApplet {
     button.addMouseListener(new ShowHideButtonListener(chart, pointsList, pointsNumber, sc));
 
     infoPanel.add(pointsScrollPane);
-    add(component, 0);
+    JComponent comp=new JComponent() {
+    };
+    add(comp, 0);
     add(button, 1);
     add(infoPanel, 2);
     add(slider, 3);
     
-    //add(new JButton("Hello"));
+   // add(new JButton("Hello"));
 
+  }
+  public void addNewChart(String xmlString){
+    ByteArrayInputStream bais = new ByteArrayInputStream(xmlString.getBytes());
+    try {
+      coordsArray = (ArrayList<PlotStorage>) XMLparser.parse(bais);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    
+    ArrayList<Double>[] dCoord = coordsArray.get(0).getCoords();
+    int kol = dCoord[0].size();
+    coord = new Coord3d[kol];
+    color = new Color[coord.length];
+    for (int i = 0; i < kol; i++){
+      coord[i] = new Coord3d(dCoord[0].get(i), dCoord[1].get(i), dCoord[2].get(i));
+      color[i] = new Color(0, (float) 1, 0);
+    }
+    
+    sc = new MySelectableScatter(coord, color) {
+      public void draw(GL gl, GLU glu, Camera cam) {
+        gl.glEnable(GL.GL_POINT_SMOOTH); // should be in init
+        super.draw(gl, glu, cam);
+      }
+    };
+    MyChart m = new MyChart(sc);
+    chart = m.getChart();
+    
+
+    
+
+    JComponent component = (JComponent) chart.getCanvas();
+    component.setBounds(0, 0, CHARTWIDTH, CHARTHEIGHT);
+    
+    add(component, 0);
   }
 }
