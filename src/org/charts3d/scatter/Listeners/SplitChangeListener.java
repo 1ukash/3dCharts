@@ -4,16 +4,16 @@ import javax.swing.JSlider;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import org.charts3d.scatter.MySelectableScatter;
+import org.charts3d.scatter.ExtendedSelectableScatter;
 
 import net.masagroup.jzy3d.chart.Chart;
 
 public class SplitChangeListener implements ChangeListener{
   
   private Chart chart=null;
-  private MySelectableScatter scatter = null;
+  private ExtendedSelectableScatter scatter = null;
   
-  public SplitChangeListener(Chart chart, MySelectableScatter scatter){
+  public SplitChangeListener(Chart chart, ExtendedSelectableScatter scatter){
     this.chart=chart;
     this.scatter=scatter;
   }

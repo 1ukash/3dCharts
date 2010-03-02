@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JList;
 
-import org.charts3d.scatter.MySelectableScatter;
+import org.charts3d.scatter.ExtendedSelectableScatter;
 
 import net.masagroup.jzy3d.chart.Chart;
 import net.masagroup.jzy3d.maths.Coord3d;
@@ -16,14 +16,14 @@ public class ShowHideButtonListener implements MouseListener{
   private boolean hide=false;
   
   private Chart chart=null;
-  private MySelectableScatter scatter = null;
+  private ExtendedSelectableScatter scatter = null;
   private JList pointsList = null;
   private ArrayList<Integer> pointsNumber=null;
   
   public ShowHideButtonListener(Chart chart, 
                                 JList pointsList,
                                 ArrayList<Integer> pointsNumber,
-                                MySelectableScatter scatter){
+                                ExtendedSelectableScatter scatter){
     this.chart=chart;
     this.pointsList=pointsList;
     this.pointsNumber=pointsNumber;

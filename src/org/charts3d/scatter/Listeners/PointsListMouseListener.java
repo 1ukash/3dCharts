@@ -6,21 +6,21 @@ import java.util.ArrayList;
 
 import javax.swing.JList;
 
-import org.charts3d.scatter.MySelectableScatter;
+import org.charts3d.scatter.ExtendedSelectableScatter;
 
 import net.masagroup.jzy3d.chart.Chart;
 
 public class PointsListMouseListener implements MouseListener{
   
   private Chart chart=null;
-  private MySelectableScatter scatter = null;
+  private ExtendedSelectableScatter scatter = null;
   private ArrayList<Integer> selectedPoints=null;
   private ArrayList<Integer> pointsNumber=null;
   
   public PointsListMouseListener(Chart chart,
                                  ArrayList<Integer> selectedPoints,
                                  ArrayList<Integer> pointsNumber,
-                                 MySelectableScatter scatter){
+                                 ExtendedSelectableScatter scatter){
     this.chart=chart;
     this.scatter=scatter;
     this.selectedPoints=selectedPoints;

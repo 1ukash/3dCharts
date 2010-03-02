@@ -3,7 +3,7 @@ package org.charts3d.scatter.Listeners;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import org.charts3d.scatter.MyScatterSelector;
+import org.charts3d.scatter.ScatterSelector;
 
 import net.masagroup.jzy3d.chart.Chart;
 import net.masagroup.jzy3d.chart.controllers.mouse.ChartMouseController;
@@ -12,12 +12,12 @@ import net.masagroup.jzy3d.chart.controllers.mouse.ScatterMouseSelector;
 public class CanvasKeyListener implements KeyListener{
   private boolean isShiftPressed=false;
   private Chart chart=null;
-  private MyScatterSelector mouseSelection=null;
+  private ScatterSelector mouseSelection=null;
   private ChartMouseController mouseCamera=null;
   
   public CanvasKeyListener(Chart chart,ScatterMouseSelector mouseSelection,ChartMouseController mouseCamera){
     this.chart=chart;
-    this.mouseSelection=(MyScatterSelector)mouseSelection;
+    this.mouseSelection=(ScatterSelector)mouseSelection;
     this.mouseCamera=mouseCamera;
   }
 
